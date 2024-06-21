@@ -1,4 +1,5 @@
 import 'package:bhc_mobile_app/features/ui/pages/auth_pages/login_page/login_page.dart';
+import 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/otp_page.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/app_bar.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/close_app_observer.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/custom_check_box.dart';
@@ -21,6 +22,7 @@ import 'package:bhc_mobile_app/features/ui/widgets/having_troubles_widget.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/inactive_widget.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/white_container.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/widget_wrapper_button.dart';
+
 // import 'package:bhc_mobile_app/features/ui/navbar/nav_bar.dart';
 // import 'package:bhc_mobile_app/features/ui/pages/verify_email_page/verify_email_page.dart';
 import 'package:bhc_mobile_app/util/alert_utils.dart';
@@ -65,65 +67,61 @@ class _Body extends StatelessWidget {
       children: [
         Expanded(
           flex: 4,
-          child: WhiteContainer(
-            padding: const EdgeInsets.symmetric(horizontal: Sizes.p18),
-            bottomOnly: true,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '${'createAccount.already'.tr()} ',
-                      style: AppTextStyles.s18w500.apply(
-                        color: AppColors.secondary3,
-                      ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${'createAccount.already'.tr()} ',
+                    style: AppTextStyles.s18w500.apply(
+                      color: AppColors.secondary3,
                     ),
-                    WidgetButton(
-                      onPressed: () =>
-                          Navigator.pushNamed(context, LoginPage.routeName),
-                      child: Text(
-                        'landing.login'.tr(),
-                        style: AppTextStyles.s18w500.apply(
-                          color: AppColors.blue,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                gapH32,
-                EmailField(
-                  onChanged: (value) {},
-                  initialValue: 'cubit.state.email',
-                ),
-                gapH16,
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: Sizes.p4),
-                      child: CustomCheckBox(
-                        value: false,
-                        onChanged: () {},
-                      ),
-                    ),
-                    gapW12,
-                    const Expanded(child: _TermsAndConditions()),
-                  ],
-                ),
-                gapH32,
-                InActiveWidget(
-                  isActive: true,
-                  child: GoogleAppleAuthWidget(
-                    onGoogleButtonPressed: () {},
-                    onAppleButtonPressed: () {},
                   ),
+                  WidgetButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, LoginPage.routeName),
+                    child: Text(
+                      'landing.login'.tr(),
+                      style: AppTextStyles.s18w500.apply(
+                        color: AppColors.blue,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              gapH32,
+              EmailField(
+                onChanged: (value) {},
+                initialValue: 'cubit.state.email',
+              ),
+              gapH16,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: Sizes.p4),
+                    child: CustomCheckBox(
+                      value: false,
+                      onChanged: () {},
+                    ),
+                  ),
+                  gapW12,
+                  const Expanded(child: _TermsAndConditions()),
+                ],
+              ),
+              gapH32,
+              InActiveWidget(
+                isActive: true,
+                child: GoogleAppleAuthWidget(
+                  onGoogleButtonPressed: () {},
+                  onAppleButtonPressed: () {},
                 ),
-                gapH40,
-                const HavingTroublesWidget(textKey: 'createAccount'),
-                gapH12,
-              ],
-            ),
+              ),
+              gapH40,
+              const HavingTroublesWidget(textKey: 'createAccount'),
+              gapH12,
+            ],
           ),
         ),
         const Spacer(),
@@ -137,19 +135,16 @@ class _CreateAccountButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.secondary7,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Sizes.p16,
-          vertical: Sizes.p8,
-        ),
-        child: FilledCustomButton(
-          isActive: true,
-          isLoading: false,
-          onPressed: (){},
-          textKey: 'landing.create',
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Sizes.p16,
+        vertical: Sizes.p8,
+      ),
+      child: FilledCustomButton(
+        isActive: true,
+        isLoading: false,
+        onPressed: () => Navigator.pushNamed(context, OtpPage.routeName),
+        textKey: 'landing.create',
       ),
     );
   }

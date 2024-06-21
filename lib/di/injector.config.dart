@@ -11,8 +11,10 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../domain/services/user_auth_service.dart' as _i3;
-import '../util/log_service.dart' as _i4;
+import '../domain/services/user_auth_service.dart' as _i4;
+import '../features/ui/pages/auth_pages/otp_page/cubit/otp_page_cubit.dart'
+    as _i3;
+import '../util/log_service.dart' as _i5;
 
 const String _dev = 'dev';
 const String _test = 'test';
@@ -29,16 +31,17 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.AuthService>(() => _i3.AuthService());
-    gh.factory<_i4.LogService>(
-      () => _i4.LogServiceDev(),
+    gh.factory<_i3.OtpPageCubit>(() => _i3.OtpPageCubit());
+    gh.singleton<_i4.AuthService>(() => _i4.AuthService());
+    gh.factory<_i5.LogService>(
+      () => _i5.LogServiceDev(),
       registerFor: {
         _dev,
         _test,
       },
     );
-    gh.factory<_i4.LogService>(
-      () => _i4.LogServiceProd(),
+    gh.factory<_i5.LogService>(
+      () => _i5.LogServiceProd(),
       registerFor: {_prod},
     );
     return this;

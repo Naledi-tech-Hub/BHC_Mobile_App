@@ -19,14 +19,14 @@ dependencies:
 
   # Network modules
   dio: ^5.4.0
-  connectivity_plus: ^5.0.2
+  connectivity_plus:
 
   # DI.
   get_it: ^7.7.0
   injectable: ^2.4.2
 
   #utils
-  sign_in_with_apple: ^5.0.0
+  sign_in_with_apple:
   google_sign_in: ^6.2.1
   easy_localization:
   flutter_email_sender:
@@ -35,6 +35,8 @@ dependencies:
   flutter_svg: ^2.0.9
   dropdown_button2: ^2.3.9
   dropdown_search: ^5.0.6
+  pinput:
+  flutter_osm_plugin: ^1.0.5
 
   #storage
   flutter_secure_storage:
