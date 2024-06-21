@@ -1,0 +1,71 @@
+name: bhc_mobile_app
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #state management
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+
+  # Network modules
+  dio: ^5.4.0
+  connectivity_plus: ^5.0.2
+
+  # DI.
+  get_it: ^7.7.0
+  injectable: ^2.4.2
+
+  #utils
+  sign_in_with_apple: ^5.0.0
+  google_sign_in: ^6.2.1
+  easy_localization:
+  flutter_email_sender:
+
+  #widget utils
+  flutter_svg: ^2.0.9
+  dropdown_button2: ^2.3.9
+  dropdown_search: ^5.0.6
+
+  #storage
+  flutter_secure_storage:
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  #code gen
+  build_runner:
+  injectable_generator:
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
+    - assets/lang/
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Bold.ttf
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+        - asset: assets/fonts/Raleway-Medium.ttf
+        - asset: assets/fonts/Raleway-Light.ttf
+        - asset: assets/fonts/Raleway-ExtraLight.ttf
+        - asset: assets/fonts/Raleway-Thin.ttf
