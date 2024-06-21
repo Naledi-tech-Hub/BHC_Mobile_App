@@ -17,6 +17,7 @@ class CustomAppBar extends AppBar {
     super.bottom,
     super.centerTitle = true,
     super.leading,
+    super.forceMaterialTransparency,
     super.backgroundColor,
     this.implyLeading = true,
     this.hasBottomRadius = true,

@@ -1,4 +1,6 @@
 import 'package:bhc_mobile_app/assets/app_theme.dart';
+import 'package:bhc_mobile_app/assets/asset_paths.dart';
+import 'package:bhc_mobile_app/features/ui/nav_bar.dart';
 import 'package:bhc_mobile_app/features/ui/pages/auth_pages/landing_page.dart';
 import 'package:bhc_mobile_app/features/ui/routing/app_router.dart';
 import 'package:bhc_mobile_app/util/consts.dart';
