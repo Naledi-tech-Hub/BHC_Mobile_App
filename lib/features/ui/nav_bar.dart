@@ -1,6 +1,7 @@
 import 'package:bhc_mobile_app/assets/app_colors.dart';
 import 'package:bhc_mobile_app/assets/app_sizes.dart';
 import 'package:bhc_mobile_app/assets/asset_paths.dart';
+import 'package:bhc_mobile_app/features/ui/pages/houses_page/houses_page.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/close_app_observer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,7 @@ class _NavBarBody extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             controller: controller,
             children: const [
-              //AnalysePage(),
+              HousesPage(),
               //ExplorePage(),
               // ConstructPage(),
               //ProfilePage(),
