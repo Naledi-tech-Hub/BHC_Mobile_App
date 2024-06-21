@@ -4,6 +4,7 @@ abstract class AppColors {
   static const transparent = Colors.transparent;
 
   static const white = Color(0xFFFFFFFF);
+  static const white50 = Color(0x80FFFFFF);
   static const black = Color(0xFF141416);
 
 
@@ -39,11 +40,8 @@ abstract class AppColors {
   static const green_4 = Color(0xFFE1F4E6);
   static const green_5 = Color(0xFFF0FAF3);
 
-  static const red = Color(0xFFFA2716);
+  static const red = Color(0xFFE86464);
   static const red_2 = Color(0xFFFC938B);
-  static const red_3 = Color(0xFFFED4D0);
-  static const red_4 = Color(0xFFFEE4E1);
-  static const red_5 = Color(0xFFFFF6F5);
 
   static const darkGreen = Color(0xFF01A72B);
 }

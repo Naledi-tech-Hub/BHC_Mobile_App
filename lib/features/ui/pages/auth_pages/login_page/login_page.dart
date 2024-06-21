@@ -1,3 +1,4 @@
+import 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/otp_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -58,47 +59,43 @@ class _Body extends StatelessWidget {
       children: [
         Expanded(
           flex: 3,
-          child: WhiteContainer(
-            padding: const EdgeInsets.symmetric(horizontal: Sizes.p18),
-            bottomOnly: true,
-            child: Column(
-              children: [
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.end,
-                  children: [
-                    Text(
-                      '${'createAccount.notRegistered'.tr()} ',
+          child: Column(
+            children: [
+              Wrap(
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.end,
+                children: [
+                  Text(
+                    '${'createAccount.notRegistered'.tr()} ',
+                    style: AppTextStyles.s18w500
+                        .apply(color: AppColors.secondary3),
+                  ),
+                  gapW4,
+                  WidgetButton(
+                    onPressed: () => Navigator.pushNamed(
+                        context, CreateAccountPage.routeName),
+                    child: Text(
+                      'landing.create'.tr(),
                       style: AppTextStyles.s18w500
-                          .apply(color: AppColors.secondary3),
+                          .copyWith(color: AppColors.blue),
                     ),
-                    gapW4,
-                    WidgetButton(
-                      onPressed: () => Navigator.pushNamed(
-                          context, CreateAccountPage.routeName),
-                      child: Text(
-                        'landing.create'.tr(),
-                        style: AppTextStyles.s18w500
-                            .copyWith(color: AppColors.blue),
-                      ),
-                    ),
-                  ],
-                ),
-                gapH32,
-                EmailField(
-                  onChanged: (val) {},
-                  initialValue: 'loginCubit.state.email',
-                ),
-                gapH32,
-                GoogleAppleAuthWidget(
-                  onGoogleButtonPressed: () {},
-                  onAppleButtonPressed: () {},
-                ),
-                gapH32,
-                const HavingTroublesWidget(textKey: 'login'),
-                gapH12,
-              ],
-            ),
+                  ),
+                ],
+              ),
+              gapH32,
+              EmailField(
+                onChanged: (val) {},
+                initialValue: 'loginCubit.state.email',
+              ),
+              gapH32,
+              GoogleAppleAuthWidget(
+                onGoogleButtonPressed: () {},
+                onAppleButtonPressed: () {},
+              ),
+              gapH32,
+              const HavingTroublesWidget(textKey: 'login'),
+              gapH12,
+            ],
           ),
         ),
         Expanded(
@@ -157,19 +154,16 @@ class _LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.secondary7,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Sizes.p16,
-          vertical: Sizes.p8,
-        ),
-        child: FilledCustomButton(
-          isActive: true,
-          isLoading: false,
-          onPressed: () {},
-          textKey: 'landing.login',
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Sizes.p16,
+        vertical: Sizes.p8,
+      ),
+      child: FilledCustomButton(
+        isActive: true,
+        isLoading: false,
+        onPressed: () => Navigator.pushNamed(context,OtpPage.routeName),
+        textKey: 'landing.login',
       ),
     );
   }

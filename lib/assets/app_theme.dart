@@ -12,7 +12,7 @@ ThemeData appTheme(BuildContext context) => ThemeData(
       primaryColor: AppColors.blue,
       useMaterial3: true,
       iconTheme: const IconThemeData(color: AppColors.black),
-      scaffoldBackgroundColor: AppColors.secondary7,
+      scaffoldBackgroundColor: AppColors.lightBlue,
       cupertinoOverrideTheme: const CupertinoThemeData(
         primaryColor: AppColors.blue,
         textTheme: CupertinoTextThemeData(
@@ -62,7 +62,7 @@ ThemeData appTheme(BuildContext context) => ThemeData(
         indicatorColor: AppColors.transparent,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.lightBlue,
         titleTextStyle: AppTextStyles.s24w600.apply(color: AppColors.black),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -76,16 +76,16 @@ ThemeData appTheme(BuildContext context) => ThemeData(
           borderSide: BorderSide(color: AppColors.secondary5),
         ),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.secondary5),
+          borderSide: BorderSide(color: AppColors.white50),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.blue),
+          borderSide: BorderSide(color: AppColors.white),
         ),
         errorBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.red_2),
+          borderSide: BorderSide(color: AppColors.red),
         ),
         focusedErrorBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.red_2),
+          borderSide: BorderSide(color: AppColors.red),
         ),
         labelStyle: AppTextStyles.s18w400.copyWith(color: AppColors.grey01),
         floatingLabelStyle:
