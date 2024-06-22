@@ -27,7 +27,7 @@ class BHCMobileApp extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             theme: appTheme(context),
             onGenerateRoute: AppRouter.onGenerateRoute,
-            initialRoute: LandingPage.routeName,
+            initialRoute: NavBar.routeName,
           );
         }
       ),

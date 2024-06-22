@@ -5,7 +5,12 @@ abstract class IconAssetsPaths {
   static const appLogo = '$_baseIconPath/app_logo.svg';
   static const appleIcon = '$_baseIconPath/apple_icon.svg';
   static const googleIcon = '$_baseIconPath/google_icon.svg';
+  static const filter = '$_baseIconPath/filter.svg';
   static const check = '$_baseIconPath/check.svg';
+  static const beds = '$_baseIconPath/beds.svg';
+  static const bath = '$_baseIconPath/bath.svg';
+  static const space = '$_baseIconPath/space.svg';
+
   static const linkInMail = '$_baseIconPath/link_in_mail.svg';
   static const analyse = '$_baseIconPath/analyse.svg';
   static const analyseInactive = '$_baseIconPath/analyse_inactive.svg';
@@ -53,5 +58,5 @@ abstract class IconAssetsPaths {
 
 abstract class ImageAssetPaths {
   static const String _basePath = 'assets/images';
-  static const landingPageBg = '$_basePath/landing_page_bg.png';
+  static const house = '$_basePath/house.png';
 }

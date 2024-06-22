@@ -26,7 +26,6 @@ class NavBar extends StatefulWidget {
 
   static const routeName = 'navbar';
 
-
   @override
   State<NavBar> createState() => _NavBarState();
 }
@@ -53,7 +52,6 @@ class _NavBarState extends State<NavBar> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) => _NavBarBody(controller);
 }
 
-
 class _NavBarBody extends StatelessWidget {
   const _NavBarBody(this.controller);
 
@@ -63,20 +61,19 @@ class _NavBarBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CloseAppObserver(
       child: Scaffold(
-          extendBody: true,
-         // appBar: _GeneralAppBar(controller),
-          bottomNavigationBar: _BottomNavBar(controller),
-          body: TabBarView(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: controller,
-            children: const [
-              HousesPage(),
-              //ExplorePage(),
-              // ConstructPage(),
-              //ProfilePage(),
-            ],
-          ),
+        // appBar: _GeneralAppBar(controller),
+        bottomNavigationBar: _BottomNavBar(controller),
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: controller,
+          children: const [
+            HousesPage(),
+            //ExplorePage(),
+            // ConstructPage(),
+            //ProfilePage(),
+          ],
         ),
+      ),
     );
   }
 }
@@ -111,7 +108,7 @@ class _BottomNavBarState extends State<_BottomNavBar> {
           controller: widget.controller,
           tabs: List.generate(
             _navBarIcons.length,
-                (index) => GestureDetector(
+            (index) => GestureDetector(
               onTap: () => widget.controller.animateTo(index),
               child: Tab(
                 text: 'tabs.$index'.tr(),

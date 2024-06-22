@@ -30,6 +30,7 @@ abstract class Sizes {
   static const p75 = 75.0;
   static const p80 = 80.0;
   static const p90 = 90.0;
+  static const p96 = 96.0;
   static const p100 = 100.0;
   static const p110 = 110.0;
   static const p128 = 128.0;

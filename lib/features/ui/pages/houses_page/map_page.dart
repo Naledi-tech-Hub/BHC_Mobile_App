@@ -10,14 +10,14 @@ final points = [
   ),
 ];
 
-class MapPage extends StatefulWidget  {
-  MapPage({super.key});
+class MapPage extends StatefulWidget {
+  const MapPage({super.key});
 
   @override
   State<MapPage> createState() => _MapPageState();
 }
 
-class _MapPageState extends State<MapPage> with AutomaticKeepAliveClientMixin{
+class _MapPageState extends State<MapPage> with AutomaticKeepAliveClientMixin {
   final MapController controller = MapController(
     initPosition: GeoPoint(
       latitude: -24.653257,
@@ -29,24 +29,24 @@ class _MapPageState extends State<MapPage> with AutomaticKeepAliveClientMixin{
   Widget build(BuildContext context) {
     super.build(context);
     return OSMFlutter(
-      controller: controller,
+      controller: controller, mapIsLoading: const LoadingIndicator(),
+      //onMapIsReady: ,
       osmOption: OSMOption(
         zoomOption: const ZoomOption(
           initZoom: 16,
           minZoomLevel: 3,
           maxZoomLevel: 17,
-          stepZoom: 1.0,
         ),
-        roadConfiguration: const RoadOption(
-          roadColor: Colors.yellowAccent,
-        ),
+
+        // roadConfiguration: const RoadOption(
+        //   roadColor: Colors.yellowAccent,
+        // ),
         staticPoints: points,
       ),
     );
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }
 

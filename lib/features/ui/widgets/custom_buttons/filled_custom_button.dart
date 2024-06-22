@@ -80,9 +80,9 @@ class FilledCustomButton extends CustomButton {
     super.alignment = null,
     this.border,
   }) : super(
-          textColor: AppColors.blue,
+          textColor: AppColors.brand,
           inActiveTextColor: AppColors.secondary4,
-          buttonColor: AppColors.blueTransparent,
+          buttonColor: AppColors.brand15,
           inActiveButtonColor: AppColors.secondary6,
         );
 
