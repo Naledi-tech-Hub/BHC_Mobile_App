@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="bhc_mobile_app"
+        android:label="BHC Mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

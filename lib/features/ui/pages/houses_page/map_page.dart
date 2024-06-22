@@ -29,12 +29,13 @@ class _MapPageState extends State<MapPage> with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     super.build(context);
     return OSMFlutter(
-      controller: controller, mapIsLoading: const LoadingIndicator(),
+      controller: controller,
+      mapIsLoading: const LoadingIndicator(),
       //onMapIsReady: ,
       osmOption: OSMOption(
         zoomOption: const ZoomOption(
           initZoom: 16,
-          minZoomLevel: 3,
+          minZoomLevel: 8,
           maxZoomLevel: 17,
         ),
 

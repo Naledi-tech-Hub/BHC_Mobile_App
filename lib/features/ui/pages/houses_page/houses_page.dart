@@ -73,7 +73,7 @@ class _HousesPageState extends State<HousesPage>
       ),
       body: TabBarView(
         controller: controller,
-        physics: const NeverScrollableScrollPhysics(),
+        //physics: const NeverScrollableScrollPhysics(),
         children: [
           HousesList(),
           MapPage(),
