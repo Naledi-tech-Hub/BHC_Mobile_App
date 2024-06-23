@@ -12,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pinput/pinput.dart';
 
-
 part 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/otp_page_widgets.dart';
 
 class OtpPage extends StatelessWidget {
@@ -26,7 +25,7 @@ class OtpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        label: 'otp.sent',
+        label: 'We sent OTP to your email',
         labelStyle: AppTextStyles.s24w400,
       ),
       body: const Padding(

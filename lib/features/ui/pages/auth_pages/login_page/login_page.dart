@@ -57,91 +57,107 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(
-          flex: 3,
-          child: Column(
-            children: [
-              Wrap(
-                alignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.end,
-                children: [
-                  Text(
-                    '${'createAccount.notRegistered'.tr()} ',
-                    style: AppTextStyles.s18w500
-                        .apply(color: AppColors.secondary3),
-                  ),
-                  gapW4,
-                  WidgetButton(
-                    onPressed: () => Navigator.pushNamed(
-                        context, CreateAccountPage.routeName),
-                    child: Text(
-                      'landing.create'.tr(),
-                      style: AppTextStyles.s18w500
-                          .copyWith(color: AppColors.blue),
-                    ),
-                  ),
-                ],
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.end,
+          children: [
+            Text(
+              '${'createAccount.notRegistered'.tr()} ',
+              style: AppTextStyles.s18w500.apply(color: AppColors.grey01),
+            ),
+            gapW4,
+            WidgetButton(
+              onPressed: () =>
+                  Navigator.pushNamed(context, CreateAccountPage.routeName),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(999),
+                  color: AppColors.white,
+                ),
+                child: Text(
+                  'landing.create'.tr(),
+                  style: AppTextStyles.s18w500.copyWith(color: AppColors.black),
+                ),
               ),
-              gapH32,
-              EmailField(
-                onChanged: (val) {},
-                initialValue: 'loginCubit.state.email',
+            ),
+          ],
+        ),
+        gapH40,
+        EmailField(onChanged: (val) {}),
+        gapH16,
+        CustomTextField(
+          labelTextKey: 'Password',
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: TextButton(
+            onPressed: () {},
+            child: Text(
+              'Forgot password?',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
               ),
-              gapH32,
-              GoogleAppleAuthWidget(
-                onGoogleButtonPressed: () {},
-                onAppleButtonPressed: () {},
-              ),
-              gapH32,
-              const HavingTroublesWidget(textKey: 'login'),
-              gapH12,
-            ],
+            ),
           ),
         ),
-        Expanded(
-          child: Column(
-            children: [
-              gapH32,
-              Wrap(
-                alignment: WrapAlignment.center,
-                runSpacing: Sizes.p6,
-                children: [
-                  Text(
-                    'login.continue'.tr(),
-                    style: AppTextStyles.s12w500
-                        .apply(color: AppColors.secondary2),
-                  ),
-                  WidgetButton(
-                    onPressed: () {},
-                    //     WebViewService.launchURL(
-                    //   context: context,
-                    //   launchUrl: termsOfService,
-                    // ),
-                    child: Text(
-                      'createAccount.terms'.tr(),
-                      style: AppTextStyles.s12w500,
-                    ),
-                  ),
-                  Text(
-                    'createAccount.and'.tr(),
-                    style: AppTextStyles.s12w500.apply(
-                      color: AppColors.secondary2,
-                    ),
-                  ),
-                  WidgetButton(
-                    onPressed: () {},
-                    //     WebViewService.launchURL(
-                    //   context: context,
-                    //   launchUrl: privacyPolicyLink,
-                    // ),
-                    child: Text(
-                      'createAccount.policy'.tr(),
-                      style: AppTextStyles.s12w500,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+        gapH32,
+        GoogleAppleAuthWidget(
+          onGoogleButtonPressed: () {},
+          onAppleButtonPressed: () {},
+        ),
+        spacer,
+        const HavingTroublesWidget(textKey: 'login'),
+        gapH12,
+        _Terms(),
+      ],
+    );
+  }
+}
+
+class _Terms extends StatelessWidget {
+  const _Terms({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      alignment: WrapAlignment.center,
+      runSpacing: Sizes.p6,
+      children: [
+        Text(
+          'login.continue'.tr(),
+          style: AppTextStyles.s12w500.apply(color: AppColors.secondary2),
+        ),
+        WidgetButton(
+          onPressed: () {},
+          //     WebViewService.launchURL(
+          //   context: context,
+          //   launchUrl: termsOfService,
+          // ),
+          child: Text(
+            'createAccount.terms'.tr(),
+            style: AppTextStyles.s12w500,
+          ),
+        ),
+        Text(
+          'createAccount.and'.tr(),
+          style: AppTextStyles.s12w500.apply(
+            color: AppColors.secondary2,
+          ),
+        ),
+        WidgetButton(
+          onPressed: () {},
+          //     WebViewService.launchURL(
+          //   context: context,
+          //   launchUrl: privacyPolicyLink,
+          // ),
+          child: Text(
+            'createAccount.policy'.tr(),
+            style: AppTextStyles.s12w500,
           ),
         ),
       ],
@@ -162,7 +178,7 @@ class _LoginButton extends StatelessWidget {
       child: FilledCustomButton(
         isActive: true,
         isLoading: false,
-        onPressed: () => Navigator.pushNamed(context,OtpPage.routeName),
+        onPressed: () => Navigator.pushNamed(context, OtpPage.routeName),
         textKey: 'landing.login',
       ),
     );

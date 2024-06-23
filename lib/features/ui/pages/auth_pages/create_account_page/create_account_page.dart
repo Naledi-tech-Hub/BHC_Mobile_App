@@ -81,10 +81,16 @@ class _Body extends StatelessWidget {
                   WidgetButton(
                     onPressed: () =>
                         Navigator.pushNamed(context, LoginPage.routeName),
-                    child: Text(
-                      'landing.login'.tr(),
-                      style: AppTextStyles.s18w500.apply(
-                        color: AppColors.blue,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(999),
+                        color: AppColors.white,
+                      ),
+                      child: Text(
+                        'landing.login'.tr(),
+                        style: AppTextStyles.s18w500
+                            .copyWith(color: AppColors.black),
                       ),
                     ),
                   ),
@@ -96,6 +102,13 @@ class _Body extends StatelessWidget {
                 initialValue: 'cubit.state.email',
               ),
               gapH16,
+              CustomTextField(
+                labelTextKey: 'Password',
+              ),
+              gapH16,
+              CustomTextField(
+                labelTextKey: 'Repeat password',
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
