@@ -15,6 +15,7 @@ abstract class AppColors {
   static const brandInActive = Color(0xFFC08B8B);
   static const whiteInActive = Color(0xFFEFF2F5);
   static const grey01 = Color(0xFF475F7B);
+  static const grey02 = Color(0xFF98ACC3);
 
   static const blue = Color(0xFF2880F8);
   static const blueHover = Color(0xFF075ED4);
