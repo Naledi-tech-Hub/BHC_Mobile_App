@@ -2,6 +2,7 @@ import 'package:bhc_mobile_app/assets/app_colors.dart';
 import 'package:bhc_mobile_app/assets/app_sizes.dart';
 import 'package:bhc_mobile_app/assets/asset_paths.dart';
 import 'package:bhc_mobile_app/assets/text_styles.dart';
+import 'package:bhc_mobile_app/features/ui/pages/house_details_page/house_details_page.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/custom_buttons/filled_custom_button.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/widget_wrapper_button.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,9 @@ class _HouseTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WidgetButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, HouseDetailsPage.routeName);
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

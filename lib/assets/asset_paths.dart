@@ -10,6 +10,12 @@ abstract class IconAssetsPaths {
   static const beds = '$_baseIconPath/beds.svg';
   static const bath = '$_baseIconPath/bath.svg';
   static const space = '$_baseIconPath/space.svg';
+  static const houses = '$_baseIconPath/houses.svg';
+  static const bookmarks = '$_baseIconPath/bookmarks.svg';
+  static const inquiry = '$_baseIconPath/inquiry.svg';
+  static const profile = '$_baseIconPath/profile.svg';
+  static const calculate = '$_baseIconPath/calc.svg';
+  static const maintenance = '$_baseIconPath/maintenance.svg';
 
   static const linkInMail = '$_baseIconPath/link_in_mail.svg';
   static const analyse = '$_baseIconPath/analyse.svg';
@@ -18,7 +24,6 @@ abstract class IconAssetsPaths {
   static const construct = '$_baseIconPath/construct_inactive.svg';
   static const explore = '$_baseIconPath/explore.svg';
   static const exploreInactive = '$_baseIconPath/explore_inactive.svg';
-  static const profile = '$_baseIconPath/profile.svg';
   static const profileInactive = '$_baseIconPath/profile_inactive.svg';
   static const arrow = '$_baseIconPath/arrow.svg';
   static const watchList = '$_baseIconPath/watchlist.svg';

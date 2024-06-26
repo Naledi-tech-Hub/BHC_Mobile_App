@@ -5,6 +5,9 @@ import 'package:bhc_mobile_app/features/ui/pages/auth_pages/landing_page.dart';
 import 'package:bhc_mobile_app/features/ui/pages/auth_pages/login_page/login_page.dart';
 import 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/cubit/otp_page_cubit.dart';
 import 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/otp_page.dart';
+import 'package:bhc_mobile_app/features/ui/pages/house_details_page/house_details_page.dart';
+import 'package:bhc_mobile_app/features/ui/pages/houses_page/application_form_page/application_form_page.dart';
+import 'package:bhc_mobile_app/features/ui/pages/houses_page/mortgage_page/mortgage_calculator_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +34,25 @@ class AppRouter {
         return _NewRoute(const LoginPage(), settings: settings);
 
       case OtpPage.routeName:
-        return _NewRouteWithBloc<OtpPageCubit>(OtpPage(), settings: settings);
+        return _NewRouteWithBloc<OtpPageCubit>(
+          OtpPage(),
+          settings: settings,
+        );
+      case HouseDetailsPage.routeName:
+        return _NewRouteWithBloc<OtpPageCubit>(
+          HouseDetailsPage(),
+          settings: settings,
+        );
+
+      case ApplicationFormPage.routeName:
+        return _NewRoute(const ApplicationFormPage(), settings: settings);
+
+      case MortgageCalculatorPage.routeName:
+        return ModalBottomSheetRoute(
+          settings: settings,
+          builder: (BuildContext context) => const MortgageCalculatorPage(),
+          isScrollControlled: false,
+        );
 
       default:
         return _NewRoute(

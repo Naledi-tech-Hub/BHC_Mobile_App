@@ -45,7 +45,7 @@ ThemeData appTheme(BuildContext context) => ThemeData(
           borderRadius: BorderRadius.circular(Sizes.p16),
           side: const BorderSide(color: AppColors.secondary5),
         ),
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.lightBlue,
         surfaceTintColor: AppColors.white,
         modalBarrierColor: AppColors.secondary6.withOpacity(0.8),
         dragHandleColor: AppColors.secondary4,
@@ -62,7 +62,7 @@ ThemeData appTheme(BuildContext context) => ThemeData(
         indicatorColor: AppColors.transparent,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.lightBlue,
+        backgroundColor: AppColors.whiteInActive,
         titleTextStyle: AppTextStyles.s24w600.apply(color: AppColors.black),
       ),
       inputDecorationTheme: InputDecorationTheme(
