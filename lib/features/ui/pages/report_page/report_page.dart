@@ -20,7 +20,7 @@ class ReportPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         label: 'Maintenance Report',
-        //centerTitle: false,
+        centerTitle: false,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(

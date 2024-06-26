@@ -14,6 +14,7 @@ import 'package:latlong2/latlong.dart';
 
 import '../../widgets/new_button.dart';
 import '../houses_page/mortgage_page/mortgage_calculator_page.dart';
+import '../report_page/create_report_page.dart';
 
 class HouseDetailsPage extends StatelessWidget {
   static const routeName = '/houseDetails';

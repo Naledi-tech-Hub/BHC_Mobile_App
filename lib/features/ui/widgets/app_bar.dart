@@ -37,7 +37,6 @@ class CustomAppBar extends AppBar {
                 )
               : null,
           automaticallyImplyLeading: implyLeading,
-          titleSpacing: implyLeading ? -10 : titleSpace,
           surfaceTintColor: Colors.transparent,
           toolbarHeight: height,
           actions: action != null ? [action, gapW16] : null,

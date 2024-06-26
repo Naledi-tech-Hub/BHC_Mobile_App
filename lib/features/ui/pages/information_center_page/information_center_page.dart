@@ -13,7 +13,7 @@ class InformationCenter extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         label: 'Information Center',
-        //centerTitle: false,
+        centerTitle: false,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),

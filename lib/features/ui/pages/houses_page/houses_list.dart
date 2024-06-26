@@ -25,7 +25,7 @@ class HousesList extends StatelessWidget {
               itemCount: 5,
               padding: EdgeInsets.zero,
               separatorBuilder: (context, index) => gapH24,
-              itemBuilder: (context, index) => _HouseTile(),
+              itemBuilder: (context, index) => HouseTile(),
             ),
           ),
         ],
@@ -34,8 +34,10 @@ class HousesList extends StatelessWidget {
   }
 }
 
-class _HouseTile extends StatelessWidget {
-  const _HouseTile({super.key});
+class HouseTile extends StatelessWidget {
+  const HouseTile({super.key, this.isFav = false});
+
+  final bool isFav;
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +51,10 @@ class _HouseTile extends StatelessWidget {
           Stack(
             children: [
               Image.asset(ImageAssetPaths.house),
-              const Positioned(
+              Positioned(
                 top: Sizes.p1,
                 right: Sizes.p1,
-                child: _BookMarkButton(),
+                child: _BookMarkButton(isFav: isFav),
               )
             ],
           ),
@@ -102,13 +104,26 @@ class _HouseTile extends StatelessWidget {
   }
 }
 
-class _BookMarkButton extends StatelessWidget {
-  const _BookMarkButton({super.key});
+class _BookMarkButton extends StatefulWidget {
+  const _BookMarkButton({super.key, required this.isFav});
+
+  final bool isFav;
+
+  @override
+  State<_BookMarkButton> createState() => _BookMarkButtonState();
+}
+
+class _BookMarkButtonState extends State<_BookMarkButton> {
+  late bool isFav = widget.isFav;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () {
+       setState(() {
+         isFav = !isFav;
+       });
+      },
       icon: Container(
         height: Sizes.p40,
         width: Sizes.p40,
@@ -122,9 +137,12 @@ class _BookMarkButton extends StatelessWidget {
             sigmaX: 8.0,
             sigmaY: 8.0,
           ),
-          child: const Icon(
-            Icons.bookmark_border_rounded,
-            color: AppColors.white,
+          child: AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            child: Icon(
+              isFav ? Icons.bookmark : Icons.bookmark_border_rounded,
+              color: AppColors.white,
+            ),
           ),
         ),
       ),

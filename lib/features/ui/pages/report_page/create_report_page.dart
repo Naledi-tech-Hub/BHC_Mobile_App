@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bhc_mobile_app/assets/app_colors.dart';
 import 'package:bhc_mobile_app/assets/text_styles.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/app_bar.dart';
@@ -193,27 +195,7 @@ class _CreateReportPageState extends State<CreateReportPage> {
                 maxLines: null,
               ),
               gapH16,
-              if (reportType == 'Fault')
-                WidgetButton(
-                  onPressed: () async {
-                    FilePickerResult? result = await FilePicker.platform
-                        .pickFiles(allowMultiple: true, type: FileType.media);
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.attach_file,
-                        color: AppColors.brand,
-                      ),
-                      Text(
-                        'Attach file',
-                        style:
-                            AppTextStyles.s18w500.apply(color: AppColors.brand),
-                      ),
-                    ],
-                  ),
-                ),
-              gapH20,
+              if (reportType == 'Fault') FilesView()
             ],
           ),
         ),
@@ -222,13 +204,65 @@ class _CreateReportPageState extends State<CreateReportPage> {
   }
 }
 
-class FilesView extends StatelessWidget {
+class FilesView extends StatefulWidget {
   const FilesView({super.key});
 
   @override
+  State<FilesView> createState() => _FilesViewState();
+}
+
+class _FilesViewState extends State<FilesView> {
+  List<PlatformFile> files = [];
+
+  @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, item) => SizedBox(),
+    return Column(
+      children: [
+        WidgetButton(
+          onPressed: () async {
+            await FilePicker.platform
+                .pickFiles(allowMultiple: true, type: FileType.media)
+                .then((val) {
+              if (val != null) files.addAll(val.files);
+              setState(() {});
+              print(files);
+            });
+          },
+          child: Row(
+            children: [
+              Icon(
+                Icons.attach_file,
+                color: AppColors.brand,
+              ),
+              Text(
+                'Attach file',
+                style: AppTextStyles.s18w500.apply(color: AppColors.brand),
+              ),
+            ],
+          ),
+        ),
+        gapH20,
+        if (files.isNotEmpty)
+          SizedBox(
+            height: 80,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: files.length,
+              separatorBuilder: (context, index) => gapW12,
+              itemBuilder: (context, index) => files[index].path != null
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.file(
+                        File(files[index].path!),
+                        height: 80,
+                        width: 80,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : SizedBox(),
+            ),
+          ),
+      ],
     );
   }
 }

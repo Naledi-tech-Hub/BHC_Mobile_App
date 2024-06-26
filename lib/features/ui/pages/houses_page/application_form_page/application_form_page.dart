@@ -2,6 +2,7 @@ import 'package:bhc_mobile_app/assets/app_colors.dart';
 import 'package:bhc_mobile_app/assets/app_sizes.dart';
 import 'package:bhc_mobile_app/assets/asset_paths.dart';
 import 'package:bhc_mobile_app/assets/text_styles.dart';
+import 'package:bhc_mobile_app/features/ui/pages/report_page/create_report_page.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/app_bar.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/custom_buttons/filled_custom_button.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/custom_text_field.dart';
@@ -36,6 +37,8 @@ class ApplicationFormPage extends StatelessWidget {
               CustomTextField(labelTextKey: 'Email'),
               gapH8,
               CustomTextField(labelTextKey: 'Phone number'),
+              gapH16,
+              FilesView(),
               gapH90,
               FilledCustomButton(
                 onPressed: () {
