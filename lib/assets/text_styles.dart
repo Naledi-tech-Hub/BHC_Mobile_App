@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const fontFamily = 'Raleway';
+const fontFamily = 'MYRIADPRO';
 
 abstract class AppTextStyles {
   static const zero = TextStyle(fontSize: 0.01);

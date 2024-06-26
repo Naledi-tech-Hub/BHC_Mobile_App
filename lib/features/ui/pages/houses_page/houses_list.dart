@@ -58,7 +58,8 @@ class _HouseTile extends StatelessWidget {
           ),
           gapH12,
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
             children: [
               Text('Villa', style: AppTextStyles.s20w500),
               spacer,

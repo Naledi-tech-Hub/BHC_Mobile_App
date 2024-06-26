@@ -128,10 +128,11 @@ class _Body extends StatelessWidget {
           ),
           gapH8,
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
             children: [
               Text(
-                '3 945 000',
+                '3 945 000 ',
                 style: AppTextStyles.s22w600,
               ),
               Text(

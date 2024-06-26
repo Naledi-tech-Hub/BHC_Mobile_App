@@ -75,6 +75,8 @@ class ReportPage extends StatelessWidget {
                             style: AppTextStyles.s20w500,
                           ),
                         ),
+                        Text(status[index]),
+                        gapW4,
                         Icon(Icons.arrow_forward_outlined)
                       ],
                     ),
@@ -110,3 +112,4 @@ class ReportPage extends StatelessWidget {
 final content = ['Electricity', 'Plumbing', 'Complaints'];
 final no = ['No: 395-63-56', 'No: 395-63-56', 'No: 395-63-56'];
 final date = ['24.05.2024', '01.01.2024', '30.11.2023'];
+final status = ['Completed', 'In progress', 'Canceled'];

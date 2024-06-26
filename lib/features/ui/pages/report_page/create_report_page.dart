@@ -3,6 +3,7 @@ import 'package:bhc_mobile_app/assets/text_styles.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/app_bar.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/custom_text_field.dart';
 import 'package:bhc_mobile_app/features/ui/widgets/widget_wrapper_button.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../assets/app_sizes.dart';
@@ -194,7 +195,10 @@ class _CreateReportPageState extends State<CreateReportPage> {
               gapH16,
               if (reportType == 'Fault')
                 WidgetButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    FilePickerResult? result = await FilePicker.platform
+                        .pickFiles(allowMultiple: true, type: FileType.media);
+                  },
                   child: Row(
                     children: [
                       Icon(
