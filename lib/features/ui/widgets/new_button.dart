@@ -12,7 +12,7 @@ class CalculatorButton extends StatelessWidget {
     this.color = AppColors.white,
     required this.text,
     required this.onPressed,
-    this.textColor = AppColors.white,
+    this.textColor = AppColors.black,
   });
 
   final String iconPath;
@@ -51,6 +51,7 @@ class CalculatorButton extends StatelessWidget {
             child: SvgPicture.asset(
               iconPath,
               fit: BoxFit.scaleDown,
+              color: textColor,
             ),
           )
         ],

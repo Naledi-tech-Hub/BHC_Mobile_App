@@ -30,6 +30,7 @@ dependencies:
   google_sign_in: ^6.2.1
   easy_localization:
   flutter_email_sender:
+  file_picker:
 
   #widget utils
   flutter_svg: ^2.0.9

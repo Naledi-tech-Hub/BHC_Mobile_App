@@ -35,19 +35,19 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.autofocus = false,
     this.focusNode,
+    this.maxLines,
   });
 
   final ValueSetter<String>? onChanged;
   final VoidCallback? onEditingComplete;
-  final String? labelTextKey;
-  final String? initialValue;
+  final String? labelTextKey, initialValue;
+
   final TextEditingController? controller;
   final InputDecoration? decoration;
   final TextStyle? style;
   final bool? enabled;
-  final bool readOnly;
-  final bool obscureText;
-  final bool autofocus;
+  final bool readOnly, obscureText, autofocus;
+  final int? maxLines;
   final TextInputType? keyboardType;
   final FormFieldValidator<String>? validator;
   final List<TextInputFormatter>? textFormatters;
@@ -62,6 +62,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       focusNode: focusNode,
       autofocus: autofocus,
+      maxLines: maxLines,
       obscureText: obscureText,
       enabled: enabled,
       readOnly: readOnly,

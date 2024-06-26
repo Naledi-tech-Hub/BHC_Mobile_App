@@ -17,27 +17,28 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppColors.lightBlue,
+      color: AppColors.white,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Positioned(
-            top: Sizes.p100,
-            child: SvgPicture.asset(IconAssetsPaths.bg),
-          ),
+          Positioned(top: Sizes.p200, child: Image.asset(ImageAssetPaths.bg)),
           Padding(
             padding: const EdgeInsets.all(Sizes.p24),
             child: Column(
               children: [
                 gapH72,
-                SvgPicture.asset(IconAssetsPaths.appLogo),
+                SvgPicture.asset(
+                  IconAssetsPaths.appLogo, color: AppColors.brand,),
                 gapH12,
                 Text(
                   'landing.future'.tr(),
-                  style: AppTextStyles.s24w700.apply(color: AppColors.white),
+                  style:
+                  AppTextStyles.s24w700.apply(color: AppColors.brand),
                 ),
                 spacer,
-                FilledCustomButton.secondary(
+                FilledCustomButton(
+                  buttonColor:AppColors.lightBlue,
+                  textColor: AppColors.brand,
                   onPressed: () {
                     Navigator.pushReplacementNamed(
                         context, CreateAccountPage.routeName);

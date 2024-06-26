@@ -10,6 +10,7 @@ import '../../widgets/app_bar.dart';
 import '../../widgets/widget_wrapper_button.dart';
 import '../houses_page/application_form_page/application_form_page.dart';
 import '../houses_page/mortgage_page/mortgage_calculator_page.dart';
+import 'create_report_page.dart';
 
 class ReportPage extends StatelessWidget {
   const ReportPage({super.key});
@@ -27,29 +28,23 @@ class ReportPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Material(
-              borderRadius: BorderRadius.circular(999),
-              child: CalculatorButton(
-                iconPath: IconAssetsPaths.calculate,
-                text: 'Emergency, call request',
-                onPressed: () {},
-              ),
+            CalculatorButton(
+              iconPath: IconAssetsPaths.call,
+              text: 'Emergency, call request',
+              onPressed: () {},
             ),
             gapH16,
-            Material(
-              borderRadius: BorderRadius.circular(999),
-              child: CalculatorButton(
-                iconPath: IconAssetsPaths.calculate,
-                color: AppColors.white,
-                textColor: AppColors.black,
-                text: 'New maintenance request',
-                onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    MortgageCalculatorPage.routeName,
-                  );
-                },
-              ),
+            CalculatorButton(
+              iconPath: IconAssetsPaths.plus,
+              color: AppColors.brand,
+              textColor: AppColors.white,
+              text: 'New maintenance request',
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  CreateReportPage.routeName,
+                );
+              },
             ),
           ],
         ),

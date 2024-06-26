@@ -16,6 +16,8 @@ abstract class IconAssetsPaths {
   static const profile = '$_baseIconPath/profile.svg';
   static const calculate = '$_baseIconPath/calc.svg';
   static const maintenance = '$_baseIconPath/maintenance.svg';
+  static const call = '$_baseIconPath/call.svg';
+  static const plus = '$_baseIconPath/plus.svg';
 
   static const linkInMail = '$_baseIconPath/link_in_mail.svg';
   static const analyse = '$_baseIconPath/analyse.svg';
@@ -64,4 +66,5 @@ abstract class IconAssetsPaths {
 abstract class ImageAssetPaths {
   static const String _basePath = 'assets/images';
   static const house = '$_basePath/house.png';
+  static const bg = '$_basePath/bg.png';
 }

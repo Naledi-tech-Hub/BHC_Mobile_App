@@ -8,6 +8,7 @@ import 'package:bhc_mobile_app/features/ui/pages/auth_pages/otp_page/otp_page.da
 import 'package:bhc_mobile_app/features/ui/pages/house_details_page/house_details_page.dart';
 import 'package:bhc_mobile_app/features/ui/pages/houses_page/application_form_page/application_form_page.dart';
 import 'package:bhc_mobile_app/features/ui/pages/houses_page/mortgage_page/mortgage_calculator_page.dart';
+import 'package:bhc_mobile_app/features/ui/pages/report_page/create_report_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,6 +47,8 @@ class AppRouter {
 
       case ApplicationFormPage.routeName:
         return _NewRoute(const ApplicationFormPage(), settings: settings);
+      case CreateReportPage.routeName:
+        return _NewRoute(const CreateReportPage(), settings: settings);
 
       case MortgageCalculatorPage.routeName:
         return ModalBottomSheetRoute(
