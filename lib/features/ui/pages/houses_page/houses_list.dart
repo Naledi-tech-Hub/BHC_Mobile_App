@@ -25,7 +25,7 @@ class HousesList extends StatelessWidget {
               itemCount: 5,
               padding: EdgeInsets.zero,
               separatorBuilder: (context, index) => gapH24,
-              itemBuilder: (context, index) => HouseTile(),
+              itemBuilder: (context, index) => HouseTile(index: index + 1),
             ),
           ),
         ],
@@ -35,9 +35,14 @@ class HousesList extends StatelessWidget {
 }
 
 class HouseTile extends StatelessWidget {
-  const HouseTile({super.key, this.isFav = false});
+  const HouseTile({
+    super.key,
+    this.isFav = false,
+    required this.index,
+  });
 
   final bool isFav;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +53,23 @@ class HouseTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
-            children: [
-              Image.asset(ImageAssetPaths.house),
-              Positioned(
-                top: Sizes.p1,
-                right: Sizes.p1,
-                child: _BookMarkButton(isFav: isFav),
-              )
-            ],
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Stack(
+              children: [
+                Image.asset(
+                  'assets/images/$index.jpg',
+                  fit: BoxFit.cover,
+                  width: double.maxFinite,
+                  height: 200,
+                ),
+                Positioned(
+                  top: Sizes.p1,
+                  right: Sizes.p1,
+                  child: _BookMarkButton(isFav: isFav),
+                )
+              ],
+            ),
           ),
           gapH12,
           Row(
@@ -120,9 +133,9 @@ class _BookMarkButtonState extends State<_BookMarkButton> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-       setState(() {
-         isFav = !isFav;
-       });
+        setState(() {
+          isFav = !isFav;
+        });
       },
       icon: Container(
         height: Sizes.p40,

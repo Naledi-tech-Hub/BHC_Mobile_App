@@ -15,8 +15,11 @@ class FavouritePage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: 2,
-        padding: EdgeInsets.symmetric(horizontal: 16,vertical: 24),
-        itemBuilder: (context, index) => HouseTile(isFav: true),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        itemBuilder: (context, index) => HouseTile(
+          isFav: true,
+          index: index + 1,
+        ),
       ),
     );
   }

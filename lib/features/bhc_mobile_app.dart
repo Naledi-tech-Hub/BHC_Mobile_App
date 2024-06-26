@@ -30,6 +30,10 @@ class BHCMobileApp extends StatelessWidget {
           theme: appTheme(context),
           onGenerateRoute: AppRouter.onGenerateRoute,
           initialRoute: LandingPage.routeName,
+          builder: (context, child) => GestureDetector(
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: child!,
+          ),
         );
       }),
     );

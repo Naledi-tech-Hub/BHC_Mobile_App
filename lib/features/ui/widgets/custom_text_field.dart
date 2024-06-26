@@ -35,7 +35,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.autofocus = false,
     this.focusNode,
-    this.maxLines,
+    this.maxLines = 1,
   });
 
   final ValueSetter<String>? onChanged;
